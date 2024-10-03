@@ -1,9 +1,11 @@
-async function populateLocale(data) {
+function populateLocale(data) {
   if (data) {
-    const locale = document.querySelector("#locale");
-    locale.textContent = data["location"];
     const date = document.querySelector("#date");
     date.textContent = data["date1"];
+    console.log(date)
+    const locale = document.querySelector("#locale");
+    locale.textContent = data["location"];
+    console.log(locale)    
   }
 }
 
