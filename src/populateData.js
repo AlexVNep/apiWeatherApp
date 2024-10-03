@@ -2,13 +2,14 @@ function populateLocale(data) {
   if (data) {
     const date = document.querySelector("#date");
     date.textContent = data["date1"];
-    console.log(date)
+    console.log(date);
     const locale = document.querySelector("#locale");
     locale.textContent = data["location"];
-    console.log(locale)    
+    console.log(locale);
+    const tempmax = document.querySelector("#temp");
+    tempmax.textContent = data["tMax"];
+    console.log(tempmax);
   }
 }
-
-// const tempmax = document.querySelector("#temp");
 
 export { populateLocale };
