@@ -4,9 +4,9 @@ import { populateLocale } from "./populateData";
 
 const fetchBtn = document.querySelector("#fetchBtn");
 
-fetchBtn.addEventListener("click", () => {
+fetchBtn.addEventListener("click", async () => {
   const location = document.querySelector("#location");
   const date1 = document.querySelector("#date1");
-  const data = getWeatherData(location.value, date1.value);
+  const data = await getWeatherData(location.value, date1.value);
   populateLocale(data);
 });
