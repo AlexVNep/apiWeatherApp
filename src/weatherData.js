@@ -1,7 +1,7 @@
-async function getWeatherData(location) {
+async function getWeatherData(location, date1) {
   const apiKey = "Y6T2RFGHWWZGLRG3EDDNF9UUD";
 
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/2024-10-03?unitGroup=metric&key=${apiKey}`;
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${date1}?unitGroup=metric&key=${apiKey}`;
 
   try {
     const response = await fetch(url);
@@ -12,9 +12,9 @@ async function getWeatherData(location) {
     const weatherData = await response.json();
     console.log(weatherData);
     return {
-      location: "benoni",
-      date1: date1,
-      tMax: weatherData.days[0].tempmax,
+      "location": location,
+      "date1": date1,
+      "tMax": weatherData.days[0].tempmax,
     };
   } catch (error) {
     console.error(error.message);
