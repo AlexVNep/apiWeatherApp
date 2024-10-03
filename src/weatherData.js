@@ -12,9 +12,10 @@ async function getWeatherData(location, date1) {
     const weatherData = await response.json();
     console.log(weatherData);
     return {
-      "location": location,
-      "date1": date1,
-      "tMax": weatherData.days[0].tempmax,
+      location: location,
+      date1: date1,
+      tMax: weatherData.days[0].tempmax,
+      days: weatherData.days.length,
     };
   } catch (error) {
     console.error(error.message);
