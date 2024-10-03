@@ -11,17 +11,17 @@
       <img src="#" alt="weather-emoji" />
     </header>
     <div id="form-container">
-      <form action="">
-        <label for="location">Location</label>
-        <input type="search" name="location" id="location" />
-        <label for="date1">Date</label>
-        <input type="date" name="date1" id="date1" />
-      </form>
+      <label for="location">Location</label>
+      <input type="search" name="location" id="location" />
+      <label for="date1">Date</label>
+      <input type="date" name="date1" id="date1" />
+      <button id="fetchBtn">Fetch</button>
     </div>
     <div id="data-container">
       <div id="data-box">
-        <div id="temp"></div>
-        <div id="temo-image"></div>
+        <div id="locationDiv"><p id="locale"></p></div>
+        <div id="temp-box"><p id="temp"></p></div>
+        <div id="temp-image"></div>
       </div>
     </div>
   </body>

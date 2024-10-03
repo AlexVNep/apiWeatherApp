@@ -1,32 +1,7 @@
-async function weatherData() {
+async function getWeatherData(location) {
   const apiKey = "Y6T2RFGHWWZGLRG3EDDNF9UUD";
-  const location = prompt("Give a location");
-  let date1 = prompt("Give a date");
 
-  let today = new Date();
-
-  function getDate() {
-    let dd = today.getDate();
-    let mm = today.getMonth() + 1;
-
-    let yyyy = today.getFullYear();
-
-    if (dd < 10) {
-      dd = "0" + dd;
-    }
-    if (mm < 10) {
-      mm = "0" + mm;
-    }
-    today = yyyy + "-" + mm + "-" + dd;
-    console.log(today);
-  }
-
-  if (date1 === "") {
-    getDate();
-    date1 = today;
-  }
-
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${date1}?unitGroup=metric&key=${apiKey}`;
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/2024-10-03?unitGroup=metric&key=${apiKey}`;
 
   try {
     const response = await fetch(url);
@@ -36,9 +11,16 @@ async function weatherData() {
 
     const weatherData = await response.json();
     console.log(weatherData);
+    return {
+      location: "benoni",
+      date1: date1,
+      tMax: weatherData.days[0].tempmax,
+    };
   } catch (error) {
     console.error(error.message);
   }
 }
 
-export default weatherData;
+export default getWeatherData;
+
+//   ${location}/${date1}

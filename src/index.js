@@ -1,6 +1,10 @@
 import "./styles.css";
-import weatherData from "./weatherData";
+import getWeatherData from "./weatherData";
+import { populateLocale } from "./populateData";
 
-console.log("I am working");
+const fetchBtn = document.querySelector("#fetchBtn");
 
-weatherData();
+fetchBtn.addEventListener("click", (event) => {
+  getWeatherData();
+  populateLocale();
+});
