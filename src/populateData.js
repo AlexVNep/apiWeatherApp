@@ -6,9 +6,21 @@ function populateLocale(data) {
     const locale = document.querySelector("#locale");
     locale.textContent = data["location"];
     console.log(locale);
-    const tempmax = document.querySelector("#temp");
-    tempmax.textContent = data["tMax"];
-    console.log(tempmax);
+
+    const tempMax = document.querySelector("#temp");
+
+    if (data["days"].length > 1) {
+      console.log(data["days"].length);
+      console.log(data["days"]);
+      data["days"].forEach((temp, index) => {
+        tempMax.textContent = data["days"][index][temp];
+        console.log(tempMax);
+      });
+    } else if (data["days"].length <= 1) {
+      console.log(data["days"].length);
+      tempMax.textContent = data["tMax"];
+      console.log(tempMax);
+    }
   }
 }
 
