@@ -8,13 +8,21 @@ function populateLocale(data) {
     console.log(locale);
 
     const tempMax = document.querySelector("#temp");
+    const tempBox = document.querySelector("#temp-box");
 
     if (data["days"].length > 1) {
       console.log(data["days"].length);
       console.log(data["days"]);
       data["days"].forEach((temp, index) => {
-        tempMax.textContent = data["days"][index][temp];
-        console.log(tempMax);
+        const tempMaxMin = document.createElement("p");
+        tempMaxMin.textContent =
+          "Max: " +
+          data["days"][index]["tempmax"] +
+          " " +
+          "Min: " +
+          data["days"][index]["tempmin"];
+        tempBox.appendChild(tempMaxMin);
+        console.log(tempMaxMin);
       });
     } else if (data["days"].length <= 1) {
       console.log(data["days"].length);
