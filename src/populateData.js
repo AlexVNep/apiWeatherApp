@@ -26,7 +26,8 @@ function populateLocale(data) {
       });
     } else if (data["days"].length <= 1) {
       console.log(data["days"].length);
-      tempMax.textContent = data["tMax"];
+      tempMax.textContent =
+        "Max: " + data["tMax"] + " " + "Min: " + data["tMin"];
       console.log(tempMax);
     }
   }
