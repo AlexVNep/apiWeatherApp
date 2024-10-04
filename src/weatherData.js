@@ -15,7 +15,7 @@ async function getWeatherData(location, date1) {
       location: location,
       date1: date1,
       tMax: weatherData.days[0].tempmax,
-      days: weatherData.days.length,
+      days: weatherData.days,
     };
   } catch (error) {
     console.error(error.message);
