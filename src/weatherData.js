@@ -18,6 +18,27 @@ async function getWeatherData(location, date1, unit) {
       tMax: weatherData.days[0].tempmax,
       tMin: weatherData.days[0].tempmin,
       days: weatherData.days,
+      condition: weatherData.days[0].conditions,
+    };
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+
+async function getWeatherGif(search) {
+  const apiKey = "N0343ZLmMBXUVHfMok2rXMWhdZnZbSBO";
+  const url = `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${search}`;
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const gifData = await response.json();
+    return {
+      gif: gifData.data.images.original.url,
+      search: search,
     };
   } catch (error) {
     console.error(error.message);
@@ -25,5 +46,4 @@ async function getWeatherData(location, date1, unit) {
 }
 
 export default getWeatherData;
-
-//   ${location}/${date1}
+export { getWeatherGif };
