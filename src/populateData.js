@@ -38,4 +38,11 @@ function populateLocale(data) {
   }
 }
 
-export { populateLocale };
+function populateGif(gifData) {
+  const tempGifDiv = document.querySelector("#temp-image");
+  const tempGif = document.createElement("img");
+  tempGif.src = gifData["gif"];
+  tempGifDiv.appendChild(tempGif);
+}
+
+export { populateLocale, populateGif };
