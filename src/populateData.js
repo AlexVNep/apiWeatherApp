@@ -7,15 +7,17 @@ function populateLocale(data) {
     locale.textContent = data["location"];
     console.log(locale);
 
-    const tempMax = document.querySelector("#temp");
     const tempBox = document.querySelector("#temp-box");
 
     if (data["days"].length > 1) {
       console.log(data["days"].length);
       console.log(data["days"]);
+      tempBox.replaceChildren();
       data["days"].forEach((temp, index) => {
         const tempMaxMin = document.createElement("p");
         tempMaxMin.textContent =
+          data["days"][index]["datetime"] +
+          " " +
           "Max: " +
           data["days"][index]["tempmax"] +
           " " +
@@ -25,10 +27,13 @@ function populateLocale(data) {
         console.log(tempMaxMin);
       });
     } else if (data["days"].length <= 1) {
+      tempBox.replaceChildren();
       console.log(data["days"].length);
-      tempMax.textContent =
+      const tempMaxMin = document.createElement("p");
+      tempMaxMin.textContent =
         "Max: " + data["tMax"] + " " + "Min: " + data["tMin"];
-      console.log(tempMax);
+      tempBox.appendChild(tempMaxMin);
+      console.log(tempMaxMin);
     }
   }
 }
