@@ -1,4 +1,4 @@
-function populateLocale(data) {
+function populateData(data) {
   if (data) {
     const date = document.querySelector("#date");
     date.textContent = data["date1"];
@@ -56,4 +56,4 @@ function populateGif(gifData) {
   }
 }
 
-export { populateLocale, populateGif };
+export { populateData, populateGif };

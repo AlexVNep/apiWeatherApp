@@ -1,6 +1,6 @@
 import "./styles.css";
 import getWeatherData from "./weatherData";
-import { populateLocale, populateGif } from "./populateData";
+import { populateData, populateGif } from "./populateData";
 import unitSelection from "./unitSelection";
 import { getWeatherGif } from "./weatherData";
 
@@ -14,7 +14,7 @@ fetchBtn.addEventListener("click", async () => {
   const data = await getWeatherData(location.value, date1.value, unit.value);
   const gifData = await getWeatherGif(data.condition);
 
-  populateLocale(data);
+  populateData(data);
   populateGif(gifData);
 });
 
