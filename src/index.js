@@ -14,10 +14,6 @@ fetchBtn.addEventListener("click", async () => {
   const data = await getWeatherData(location.value, date1.value, unit.value);
   const gifData = await getWeatherGif(data.condition);
 
-  console.log(data.condition);
-  if (data.condition === "Partially cloudy") {
-    gifData.search = "clouds";
-  }
   populateLocale(data);
   populateGif(gifData);
 });
