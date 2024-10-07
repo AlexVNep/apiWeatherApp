@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+header {
+  /* border: 2px solid black; */
+  display: flex;
+}
+
+header > h1 {
+  /* border: 2px solid black; */
+  display: flex;
+  align-items: center;
+}
