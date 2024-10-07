@@ -22,7 +22,9 @@ function populateLocale(data) {
           data["days"][index]["tempmax"] +
           " " +
           "Min: " +
-          data["days"][index]["tempmin"];
+          data["days"][index]["tempmin"] +
+          " " +
+          data["condition"];
         tempBox.appendChild(tempMaxMin);
         console.log(tempMaxMin);
       });
@@ -31,7 +33,13 @@ function populateLocale(data) {
       console.log(data["days"].length);
       const tempMaxMin = document.createElement("p");
       tempMaxMin.textContent =
-        "Max: " + data["tMax"] + " " + "Min: " + data["tMin"];
+        "Max: " +
+        data["tMax"] +
+        " " +
+        "Min: " +
+        data["tMin"] +
+        " " +
+        data["condition"];
       tempBox.appendChild(tempMaxMin);
       console.log(tempMaxMin);
     }
@@ -39,10 +47,13 @@ function populateLocale(data) {
 }
 
 function populateGif(gifData) {
-  const tempGifDiv = document.querySelector("#temp-image");
-  const tempGif = document.createElement("img");
-  tempGif.src = gifData["gif"];
-  tempGifDiv.appendChild(tempGif);
+  if (gifData) {
+    const tempGifDiv = document.querySelector("#temp-image");
+    tempGifDiv.replaceChildren();
+    const tempGif = document.createElement("img");
+    tempGif.src = gifData["gif"];
+    tempGifDiv.appendChild(tempGif);
+  }
 }
 
 export { populateLocale, populateGif };
