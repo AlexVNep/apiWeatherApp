@@ -1,7 +1,7 @@
-async function getWeatherData(location, date1) {
+async function getWeatherData(location, date1, unit) {
   const apiKey = "Y6T2RFGHWWZGLRG3EDDNF9UUD";
 
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${date1}?unitGroup=metric&key=${apiKey}`;
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/${date1}?unitGroup=${unit}&key=${apiKey}`;
 
   try {
     const response = await fetch(url);
@@ -14,6 +14,7 @@ async function getWeatherData(location, date1) {
     return {
       location: location,
       date1: date1,
+      unit: unit,
       tMax: weatherData.days[0].tempmax,
       tMin: weatherData.days[0].tempmin,
       days: weatherData.days,
