@@ -9,25 +9,28 @@
     <header>
       <h1>Weather App</h1>
       <img src="./icons8-cloud-96.png" alt="weather-icon" />
+      <div id="unit-box">
+        <label for="unit" id="unit-label">&deg;C</label>
+        <input type="checkbox" name="unit" id="unit" value="metric" checked />
+      </div>
     </header>
-    <div id="unit-box">
-      <label for="unit" id="unit-label">&deg;C</label>
-      <input type="checkbox" name="unit" id="unit" value="metric" checked />
-    </div>
-    <div id="form-container">
-      <label for="location">Location: </label>
-      <input type="search" name="location" id="location" />
-      <label for="date1">Date: </label>
-      <input type="date" name="date1" id="date1" />
-      <button id="fetchBtn">Fetch</button>
-    </div>
-    <div id="data-container">
-      <div id="data-box">
-        <div id="date-box"><p id="date"></p></div>
-        <div id="locationDiv"><p id="locale"></p></div>
-        <div id="temp-box"><p id="temp"></p></div>
+    <div id="container">
+      <div id="form-container">
+        <label for="location">Location: </label>
+        <input type="search" name="location" id="location" />
+        <label for="date1">Date: </label>
+        <input type="date" name="date1" id="date1" />
+        <button id="fetchBtn">Fetch</button>
+      </div>
+      <div id="data-container">
+        <div id="data-box">
+          <div id="date-box"><p id="date"></p></div>
+          <div id="locationDiv"><p id="locale"></p></div>
+          <div id="temp-box"><p id="temp"></p></div>
+        </div>
         <div id="temp-image"></div>
       </div>
     </div>
+    <footer><p id="copyright"></p></footer>
   </body>
 </html>
