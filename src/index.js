@@ -26,3 +26,12 @@ fetchBtn.addEventListener("click", async () => {
 });
 
 unit.addEventListener("change", unitSelection);
+
+function copyRight() {
+  const copyright = document.querySelector("#copyright");
+  const year = new Date().getFullYear();
+
+  copyright.textContent = `Copyright Alex Nepomucenoⓒ 2024`;
+}
+
+copyRight();
