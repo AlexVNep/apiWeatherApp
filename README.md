@@ -3,10 +3,9 @@
 This project allows users to get weather forecasts for any location using the Visual Crossing API. Users can toggle between Celsius and Fahrenheit temperature units, and the page updates dynamically with weather information.
 
 ## Features
-- Search for weather by location (city or zip code).
+- Search for weather by location (city).
 - Toggle between Celsius and Fahrenheit.
-- Dynamic weather display including weather description, icon, and temperature.
-- Background color changes based on the weather conditions.
+- Dynamic image appears depending on weather. 
 
 ## Setup
 
